@@ -9,9 +9,7 @@ class Solution {
       String[] letters = s.split("");
       for (String letter : letters) { // iterate through string, check if letter in map
         if (map.containsKey(letter)) {
-          int count = map.get(letter);
-          count++;
-          map.put(letter, count);
+          map.replace(letter, map.get(letter)+1);
         } else {
           map.put(letter, 1);
         }
@@ -20,8 +18,8 @@ class Solution {
       int[] max = {0};
       char[] res = new char[1];
       map.forEach((key, value) -> {
-        if (map.get(key) > max[0]) {
-          max[0] = map.get(key);
+        if (value > max[0]) {
+          max[0] = value;
           res[0] = key.charAt(0);
         }
 
