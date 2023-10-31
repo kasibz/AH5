@@ -8,11 +8,10 @@ class Solution {
       // split string to single length strings.
       String[] letters = s.split("");
       for (String letter : letters) { // iterate through string, check if letter in map
-        if (map.containsKey(letter)) {
-          map.replace(letter, map.get(letter)+1);
-        } else {
+        if (map.containsKey(letter)) 
+          map.replace(letter, map.get(letter) + 1);
+        else 
           map.put(letter, 1);
-        }
       }
 
       int[] max = {0};
@@ -22,8 +21,6 @@ class Solution {
           max[0] = value;
           res[0] = key.charAt(0);
         }
-
-        
       });
       
       return res[0];
